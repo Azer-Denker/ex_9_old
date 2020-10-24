@@ -78,7 +78,6 @@ class UserChangeView(UserPassesTestMixin, UpdateView):
         return super().get_context_data(**kwargs)
 
     def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
         form = self.get_form()
         profile_form = self.get_profile_form()
         if form.is_valid() and profile_form.is_valid():

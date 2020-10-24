@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-
 from django.db import models
 
 
@@ -18,7 +17,7 @@ class Photo(models.Model):
 
 
 class Comment(models.Model):
-    photo = models.ForeignKey('webapp.Photo', related_name='comments', on_delete=models.CASCADE, verbose_name='Статья')
+    photo = models.ForeignKey('webapp.Photo', related_name='comments', on_delete=models.CASCADE, verbose_name='Фото')
     text = models.TextField(max_length=400, verbose_name='Комментарий')
     author = models.ForeignKey(get_user_model(), on_delete=models.SET_DEFAULT, default=1,
                                related_name='comments', verbose_name='Автор')
@@ -31,3 +30,16 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
+
+class Chosen(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='chosen',
+                             verbose_name='Пользователь')
+    photo = models.ForeignKey('webapp.Photo', on_delete=models.CASCADE, related_name='likes', verbose_name='Статья')
+
+    def __str__(self):
+        return f'{self.user.name} - {self.photo.image}'
+
+    class Meta:
+        verbose_name = 'Избраные'
+        verbose_name_plural = 'Избраные'

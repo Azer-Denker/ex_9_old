@@ -32,9 +32,9 @@
                 {% if user.is_authenticated %}
                     <p>
                         <span class="counter">{{ photo.like_count }}</span>
-                        {% with photo|liked_by:user as liked %}
-                            <a class="{% if liked %}hidden{% endif %} like" href="{% url 'webapp:photo_like' photo.pk %}">Like</a>
-                            <a class="{% if not liked %}hidden{% endif %} unlike" href="{% url 'webapp:photo_unlike' photo.pk %}">Unlike</a>
+                        {% with photo|chosed_by:user as chosed %}
+                            <a class="{% if chosed %}hidden{% endif %} chose" href="{% url 'webapp:photo_chose' photo.pk %}">В избраное</a>
+                            <a class="{% if not chosed %}hidden{% endif %} not_chose" href="{% url 'webapp:photo_chose' photo.pk %}">Убрать</a>
                         {% endwith %}
                     </p>
                 {% endif %}

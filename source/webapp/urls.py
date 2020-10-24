@@ -13,6 +13,8 @@ urlpatterns = [
             path('delete/', PhotoDeleteView.as_view(), name='photo_delete'),
             path('comments/add/', PhotoCommentCreateView.as_view(),
                  name='photo_comment_add'),
+            path('chose/', PhotoLikeView.as_view(), name='photo_chosen'),
+            path('not_chosed/', PhotoNotChosenView.as_view(), name='photo_not_chosen'),
         ])),
         path('add/', PhotoCreateView.as_view(), name='photo_create'),
     ])),

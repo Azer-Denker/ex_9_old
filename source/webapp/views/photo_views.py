@@ -1,8 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
+from django.http import HttpResponse, HttpResponseForbidden
+from django.shortcuts import get_object_or_404
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 
-from webapp.models import Photo
+from webapp.models import Photo, Chosen
 
 
 class IndexView(ListView):
@@ -62,3 +65,25 @@ class PhotoDeleteView(DeleteView):
     model = Photo
     context_object_name = 'obj'
     success_url = reverse_lazy('webapp:index')
+
+
+class PhotoLikeView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        photo = get_object_or_404(Photo, pk=kwargs.get('pk'))
+        chosen, created = Chosen.objects.get_or_create(photo=photo, user=request.user)
+        if created:
+            photo.chosen_count += 1
+            photo.save()
+            return HttpResponse(photo.chosen_count)
+        else:
+            return HttpResponseForbidden()
+
+
+class PhotoNotChosenView(LoginRequiredMixin, View):
+    def delete(self, request, *args, **kwargs):
+        photo = get_object_or_404(Photo, pk=kwargs.get('pk'))
+        chosen = get_object_or_404(photo.chosens, user=request.user)
+        chosen.delete()
+        photo.chosen_count -= 1
+        photo.save()
+        return HttpResponse(photo.chosen_count)
