@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Delete Photo{% endblock %}
+{% block menu %}
+    <li><a href="{% url 'webapp:photo_view' obj.pk %}">View</a></li>
+{% endblock %}
+{% block content %}
+    <h1>Are you sure want to delete photo "{{ obj }}"?</h1>
+    <form method="POST" action="{% url "webapp:photo_delete" obj.pk %}" class="text-center">
+        {% csrf_token %}
+        <p><input type="submit" value="Confirm"></p>
+        <p><a href="{% url "webapp:photo_view" obj.pk %}">Cancel</a></p>
+    </form>
+{% endblock %}

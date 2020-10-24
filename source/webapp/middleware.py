@@ -1,4 +1,4 @@
-from django.http import Http404, HttpResponseNotFound
+from django.http import Http404
 
 
 # Пример блокирования запроса в Middleware
@@ -42,7 +42,6 @@ class FindIds:
 
         response = self.get_response(request)
         return response
-
 
 
 # Пример модификации ответа в Middleware

@@ -8,8 +8,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet, ModelViewSet
 
 from api_v1.permissions import GETModelPermissions
-from api_v1.serializers import ArticleSerializer, UserSerializer
-from webapp.models import Article, ArticleLike
+from api_v1.serializers import PhotoSerializer, UserSerializer
+from webapp.models import Photo
 
 
 @ensure_csrf_cookie
@@ -19,8 +19,8 @@ def get_token_view(request, *args, **kwargs):
     return HttpResponseNotAllowed('Only GET request are allowed')
 
 
-class ArticleViewSet(ViewSet):
-    queryset = Article.objects.all()
+class PhotoViewSet(ViewSet):
+    queryset = Photo.objects.all()
     # permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
 
     def get_permissions(self):
@@ -32,56 +32,36 @@ class ArticleViewSet(ViewSet):
             return [AllowAny()]
 
     def list(self, request):
-        objects = Article.objects.all()
-        slr = ArticleSerializer(objects, many=True, context={'request': request})
+        objects = Photo.objects.all()
+        slr = PhotoSerializer(objects, many=True, context={'request': request})
         return Response(slr.data)
 
     def create(self, request):
-        slr = ArticleSerializer(data=request.data, context={'request': request})
+        slr = PhotoSerializer(data=request.data, context={'request': request})
         if slr.is_valid():
-            article = slr.save()
+            photo = slr.save()
             return Response(slr.data)
         else:
             return Response(slr.errors, status=400)
 
     def retrieve(self, request, pk=None):
-        article = get_object_or_404(Article, pk=pk)
-        slr = ArticleSerializer(article, context={'request': request})
+        photo = get_object_or_404(Photo, pk=pk)
+        slr = PhotoSerializer(photo, context={'request': request})
         return Response(slr.data)
 
     def update(self, request, pk=None):
-        article = get_object_or_404(Article, pk=pk)
-        slr = ArticleSerializer(data=request.data, instance=article, context={'request': request})
+        photo = get_object_or_404(Photo, pk=pk)
+        slr = PhotoSerializer(data=request.data, instance=photo, context={'request': request})
         if slr.is_valid():
-            article = slr.save()
+            photo = slr.save()
             return Response(slr.data)
         else:
             return Response(slr.errors, status=400)
 
     def destroy(self, request, pk=None):
-        article = get_object_or_404(Article, pk=pk)
-        article.delete()
+        photo = get_object_or_404(Photo, pk=pk)
+        photo.delete()
         return Response({'pk': pk})
-
-    @action(methods=['post'], detail=True)
-    def like(self, request, pk=None):
-        article = get_object_or_404(Article, pk=pk)
-        like, created = ArticleLike.objects.get_or_create(article=article, user=request.user)
-        if created:
-            article.like_count += 1
-            article.save()
-            return Response({'pk': pk, 'likes': article.like_count})
-        else:
-            return Response(status=403)
-
-    @action(methods=['delete'], detail=True)
-    def unlike(self, request, pk=None):
-        article = get_object_or_404(Article, pk=pk)
-        like = get_object_or_404(article.likes, user=request.user)
-        like.delete()
-        article.like_count -= 1
-        article.save()
-        return Response({'pk': pk, 'likes': article.like_count})
 
 
 class UserViewSet(ModelViewSet):

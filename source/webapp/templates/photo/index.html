@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Photos:</h1>
+    <hr/>
+        {% for photo in photos %}
+            <img class="photo" src="{{ photo.image.url }}" width="250" height="250" alt="user picture">
+            <div>Description: {{ photo.description }}</div>
+            <div>Author: {{ photo.author_name }}</div>
+            <div>Created at: {{ photo.creation_date }}</div>
+
+
+            <a href="{% url 'webapp:photo_view' photo.pk %}">More...</a>
+            <hr/>
+        {% endfor %}
+{% endblock %}

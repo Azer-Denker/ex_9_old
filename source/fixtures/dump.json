@@ -81,7 +81,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 2,
   "fields": {
     "title": "New Title 0",
@@ -95,7 +95,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 3,
   "fields": {
     "title": "New Title 1",
@@ -109,7 +109,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 4,
   "fields": {
     "title": "New Title 2",
@@ -123,7 +123,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 5,
   "fields": {
     "title": "",
@@ -137,7 +137,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 6,
   "fields": {
     "title": "New Title 4",
@@ -151,7 +151,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 8,
   "fields": {
     "title": "New Title 6",
@@ -165,7 +165,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 9,
   "fields": {
     "title": "New Title 7",
@@ -179,7 +179,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 11,
   "fields": {
     "title": "New Title 10",
@@ -193,7 +193,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 12,
   "fields": {
     "title": "Test",
@@ -207,7 +207,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 13,
   "fields": {
     "title": "Title",
@@ -221,7 +221,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 27,
   "fields": {
     "title": "\u043d\u0435\u043f\u0433\u0440ased",
@@ -235,7 +235,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 28,
   "fields": {
     "title": "",
@@ -249,7 +249,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 29,
   "fields": {
     "title": "Title 2",
@@ -265,7 +265,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 30,
   "fields": {
     "title": "Admin",
@@ -279,7 +279,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 31,
   "fields": {
     "title": "Test",
@@ -293,7 +293,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 32,
   "fields": {
     "title": "ytghjk",
@@ -307,7 +307,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 33,
   "fields": {
     "title": "jgvigoy8ui",
@@ -321,7 +321,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 34,
   "fields": {
     "title": "sddad",
@@ -337,7 +337,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 35,
   "fields": {
     "title": "huojik",
@@ -351,7 +351,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 37,
   "fields": {
     "title": "huiygtif6udtiygujkl",
@@ -368,7 +368,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 39,
   "fields": {
     "title": "Test tes test",
@@ -382,7 +382,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 40,
   "fields": {
     "title": "sasdasdasdasd",
@@ -396,7 +396,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 42,
   "fields": {
     "title": "testtesttest",
@@ -413,7 +413,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 43,
   "fields": {
     "title": "Test Test Test",
@@ -430,7 +430,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 44,
   "fields": {
     "title": "Test test test",
@@ -447,10 +447,10 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 45,
   "fields": {
-    "title": "This a long long article",
+    "title": "This a long long photo",
     "text": "Test\r\ntest\r\ntest\r\ntest",
     "author": 2,
     "status": "moderated",
@@ -464,7 +464,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 46,
   "fields": {
     "title": "test test test",
@@ -478,7 +478,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.photo",
   "pk": 47,
   "fields": {
     "title": "test test test",
@@ -495,7 +495,7 @@
   "model": "webapp.comment",
   "pk": 1,
   "fields": {
-    "article": 27,
+    "photo": 27,
     "text": "hb;jkl\r\nipygbhlk",
     "author": 1,
     "created_at": "2020-08-04T13:51:44.190Z",
@@ -506,7 +506,7 @@
   "model": "webapp.comment",
   "pk": 2,
   "fields": {
-    "article": 27,
+    "photo": 27,
     "text": "bvguhijl\r\nljkhgicfurdf7\r\njnhgyt",
     "author": 1,
     "created_at": "2020-08-04T13:51:57.619Z",
@@ -517,7 +517,7 @@
   "model": "webapp.comment",
   "pk": 3,
   "fields": {
-    "article": 29,
+    "photo": 29,
     "text": "vugftyt8p7oi\r\nljbkit87y9\r\nkjbhyiuo",
     "author": 1,
     "created_at": "2020-08-04T13:52:23.744Z",
@@ -528,7 +528,7 @@
   "model": "webapp.comment",
   "pk": 4,
   "fields": {
-    "article": 30,
+    "photo": 30,
     "text": "90iuhiybjnjbh0\r\ni90uhgbiyhjbh\r\nhui",
     "author": 1,
     "created_at": "2020-08-04T13:52:40.762Z",
@@ -539,7 +539,7 @@
   "model": "webapp.comment",
   "pk": 5,
   "fields": {
-    "article": 31,
+    "photo": 31,
     "text": "bjhgiuo\r\njkihu\r\njkhy",
     "author": 1,
     "created_at": "2020-08-04T13:52:53.310Z",
@@ -550,7 +550,7 @@
   "model": "webapp.comment",
   "pk": 6,
   "fields": {
-    "article": 31,
+    "photo": 31,
     "text": "text",
     "author": 1,
     "created_at": "2020-08-04T14:20:18.257Z",
@@ -561,7 +561,7 @@
   "model": "webapp.comment",
   "pk": 7,
   "fields": {
-    "article": 31,
+    "photo": 31,
     "text": "\u0444\u0432\u044b\u0444\u0432",
     "author": 1,
     "created_at": "2020-08-04T14:23:10.287Z",
@@ -572,7 +572,7 @@
   "model": "webapp.comment",
   "pk": 8,
   "fields": {
-    "article": 43,
+    "photo": 43,
     "text": "Test",
     "author": 1,
     "created_at": "2020-08-20T15:11:34.881Z",
@@ -583,7 +583,7 @@
   "model": "webapp.comment",
   "pk": 9,
   "fields": {
-    "article": 43,
+    "photo": 43,
     "text": "Test 2",
     "author": 1,
     "created_at": "2020-08-20T15:11:40.734Z",
@@ -594,7 +594,7 @@
   "model": "webapp.comment",
   "pk": 10,
   "fields": {
-    "article": 44,
+    "photo": 44,
     "text": "Test",
     "author": 1,
     "created_at": "2020-08-20T15:23:49.327Z",
@@ -605,7 +605,7 @@
   "model": "webapp.comment",
   "pk": 11,
   "fields": {
-    "article": 44,
+    "photo": 44,
     "text": "Test 2",
     "author": 1,
     "created_at": "2020-08-20T15:23:52.674Z",
@@ -616,7 +616,7 @@
   "model": "webapp.comment",
   "pk": 12,
   "fields": {
-    "article": 44,
+    "photo": 44,
     "text": "Test 3",
     "author": 1,
     "created_at": "2020-08-20T15:23:55.850Z",
@@ -627,7 +627,7 @@
   "model": "webapp.comment",
   "pk": 13,
   "fields": {
-    "article": 44,
+    "photo": 44,
     "text": "Test",
     "author": 1,
     "created_at": "2020-08-20T15:57:03.616Z",
@@ -638,7 +638,7 @@
   "model": "webapp.comment",
   "pk": 14,
   "fields": {
-    "article": 44,
+    "photo": 44,
     "text": "Test",
     "author": 1,
     "created_at": "2020-08-20T15:57:28.814Z",
@@ -649,7 +649,7 @@
   "model": "webapp.comment",
   "pk": 16,
   "fields": {
-    "article": 35,
+    "photo": 35,
     "text": "Test",
     "author": 1,
     "created_at": "2020-09-07T14:43:45.212Z",
@@ -660,7 +660,7 @@
   "model": "webapp.comment",
   "pk": 18,
   "fields": {
-    "article": 45,
+    "photo": 45,
     "text": "Test test test test",
     "author": 2,
     "created_at": "2020-09-07T15:26:18.469Z",

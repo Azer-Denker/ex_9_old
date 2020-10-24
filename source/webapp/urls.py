@@ -1,27 +1,20 @@
 from django.urls import path, include
-from webapp.views import IndexView, ArticleCreateView, ArticleView, \
-    ArticleUpdateView, ArticleDeleteView, \
-    ArticleCommentCreateView, ArticleMassActionView, \
-    CommentUpdateView, CommentDeleteView, ArticleLikeView, ArticleUnLikeView
+from webapp.views import *
 
 app_name = 'webapp'
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
 
-    path('article/', include([
+    path('photo/', include([
         path('<int:pk>/', include([
-            path('', ArticleView.as_view(), name='article_view'),
-            path('update/', ArticleUpdateView.as_view(), name='article_update'),
-            path('delete/', ArticleDeleteView.as_view(), name='article_delete'),
-            path('comments/add/', ArticleCommentCreateView.as_view(),
-                 name='article_comment_add'),
-            path('like/', ArticleLikeView.as_view(), name='article_like'),
-            path('unlike/', ArticleUnLikeView.as_view(), name='article_unlike'),
+            path('', PhotoView.as_view(), name='photo_view'),
+            path('update/', PhotoUpdateView.as_view(), name='photo_update'),
+            path('delete/', PhotoDeleteView.as_view(), name='photo_delete'),
+            path('comments/add/', PhotoCommentCreateView.as_view(),
+                 name='photo_comment_add'),
         ])),
-
-        path('add/', ArticleCreateView.as_view(), name='article_create'),
-        path('mass-action/', ArticleMassActionView.as_view(), name='article_mass_action'),
+        path('add/', PhotoCreateView.as_view(), name='photo_create'),
     ])),
 
     path('comment/', include([

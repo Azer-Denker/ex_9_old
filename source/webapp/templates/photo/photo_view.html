@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Task_view{% endblock %}
+{% block menu %}
+        <li><a href="{% url 'webapp:photo_update' photo.pk %}">Update</a></li>
+        <li><a href="{% url 'webapp:photo_delete' photo.pk %}">Delete</a></li>
+{% endblock %}
+{% block content %}
+   <div class="container">
+       <img class="photo" src="{{ photo.image.url }}" width="500" height="500" alt="user picture">
+        <div>Description: {{ photo.description }}</div>
+        <div>Created at: {{ photo.creation_date }}</div>
+        <div>Author: {{ photo.author_name }}</div>
+        <hr/>
+
+   </div>
+    <div class="comment-list">
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.author }} commented at {{ comment.created_at|date:'d.m.Y H:i:s' }}</p>
+                <div class="pre">{{ comment.text }}</div>
+            <button href="{% url 'webapp:comment_delete' comment.pk %}">Delete</button>
+            </div>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+            <a href="{% url 'webapp:photo_comment_add' photo.pk %}">Создать коментарий</a>
+      </div>
+    </div>
+{% endblock %}
